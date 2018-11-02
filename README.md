@@ -4,7 +4,8 @@ The first challenge #TIA#pre-bootcamp.
 
 # Running the UI
 
-<a href="ui/index.html">Click here</a> to run the UI
+
+<a href="https://evaristrust.github.io/evaSendIt/UI/" target="_blank">https://evaristrust.github.io/evaSendIt/UI/</a>
 
 # Note
 
