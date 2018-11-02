@@ -1,0 +1,84 @@
+<!Doctype html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	
+	<title> admin Area</title>
+</head>
+<body>
+  <nav>
+  <ul>
+
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="dashboard.html">Dashboard</a></li>
+   <li><a href="index.html">Logout</a></li>
+  </ul>
+  </nav>
+<div>
+
+<h3 class="page_header">Customer Orders</h3>
+
+  <table id="orders" class="beautiful_table">
+  <thead>
+    <tr>
+      <th>Ordered By</th>
+      <th>Order ID</th>
+      <th>Ordered On</th>
+      <th>Item</th>
+      <th>Quantity</th>
+      <th>Weight</th>
+      <th>From</th>
+      <th>Destination</th>
+      <th>Status</th>
+      <th>Details</th>
+      <th>Status</th>
+      <th>Destination</th>
+    </tr>
+</thead>
+
+<tbody>
+
+<tr>
+  <td>Evarest</td>
+  <td>XY887-99</td>
+  <td>2018-10-27</td>
+  <td>Iphone box</td>
+  <td>10</td>
+  <td>50</td>
+  <td>Rwanda</td>
+  <td>Nigeria</td>
+  <td>Complete</td>
+  <td><a href="order_details.html">Details</a></td>
+  <td><a href="#" onclick="updateStatus(event,'incomplete',1 )">Change to Incomplete</a></td>
+    
+  <td> <a href="update_destination.html?orderid=XY887-99">Update Destination</a></td>
+
+  
+</tr>
+
+<tr>
+  <td>Evarest</td>
+  <td>LP009-23</td>
+  <td>2018-10-29</td>
+  <td>Laptops</td>
+  <td>4</td>
+  <td>50</td>
+  <td>Rwanda</td>
+  <td>Japan</td>
+  <td>InComplete</td>
+  <td><a href="order_details.html">Details</a></td>
+  <td><a href="#" onclick="updateStatus(event,'complete',2 )">Change to Complete</a></td>
+    
+   <td><a href="update_destination.html?orderid=LP009-23">Update Destination</a></td>
+
+  
+</tr>
+</tbody>
+</table>
+  
+
+</div>
+<script src="scripts/orders.js"></script>
+</body>
+
+  </html>

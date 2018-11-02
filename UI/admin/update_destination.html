@@ -1,0 +1,210 @@
+<!Doctype html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	
+	<title> admin : Update Destination</title>
+  <style>
+
+  <style>
+      #right-panel {
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+
+      #right-panel select, #right-panel input {
+        font-size: 15px;
+      }
+
+      #right-panel select {
+        width: 100%;
+      }
+
+      #right-panel i {
+        font-size: 12px;
+      }
+      
+      #map {
+        height: 500px;
+        width: 600px;
+      }
+      #right-panel {
+        float: right;
+        width: 48%;
+        padding-left: 2%;
+      }
+      #output {
+        font-size: 11px;
+      }
+    </style>
+
+  </style>
+</head>
+<body>
+  <nav>
+  <ul>
+
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="dashboard.html">Dashboard</a></li>
+   <li><a href="index.html">Logout</a></li>
+  </ul>
+  </nav>
+
+
+<h3 class="page_header">Update Order Location</h3>
+
+<h5 class="sub_page_header">Order Details</h5>
+
+<table class="beautiful_table">
+  
+    <tr><td>Ordered By</td><td>Evarest</td></tr>
+
+    <tr><td>Order Id</td><td>XY887-99</td></tr>
+    <tr><td>Order Date</td><td>2018-10-27</td></tr>
+    <tr><td>Sent From</td><td>Rwanda</td></tr>
+    <tr><td>Sent To</td><td>Nigeria</td></tr>
+    <tr><td>Current Country</td><td id="current_destination">Rwanda</td></tr>
+
+  <table>
+
+
+
+<form class="beautiful_form">
+
+  
+
+<label for="country"> New Destination </label><br>
+  <select id="country">
+        <option value="Afghanistan">Afghanistan</option>
+      
+      <option value="Bahamas">Bahamas</option>
+      
+      <option value="Cambodia">Cambodia</option>
+      
+      <option value="Denmark">Denmark</option>
+     
+      <option value="Ecuador">Ecuador</option>
+     
+      <option value="Falkland Islands">Falkland Islands (Malvinas)</option>
+     
+      <option value="Gabon">Gabon</option>
+      
+      <option value="Haiti">Haiti</option>
+     
+      <option value="Iceland">Iceland</option>
+      <option value="Japan">Japan</option>
+      <option value="Nigeria">Nigeria</option>
+
+      <option value="Rwanda">Rwanda</option>
+    </select><br>
+<button type="button" id="change" class="btn-primary" onclick="updateCurrentDestinationCountry()"> Change </button>
+  </form>
+
+
+
+
+
+
+
+<hr/>
+
+
+
+<div id="right-panel">
+
+      <div>
+        <strong>Distance</strong>
+      </div>
+      <div id="output"></div>
+    </div>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var bounds = new google.maps.LatLngBounds;
+        var markersArray = [];
+
+        var origin1 = {lat: -1.94995, lng: 30.05885};
+        var origin2 = 'Kigali, Rwanda';
+        var destinationA = 'Abuja, Nigeria';
+        var destinationB = {lat: 6.465422, lng: 3.406448};
+
+        var destinationIcon = 'https://chart.googleapis.com/chart?' +
+            'chst=d_map_pin_letter&chld=D|FF0000|000000';
+        var originIcon = 'https://chart.googleapis.com/chart?' +
+            'chst=d_map_pin_letter&chld=O|FFFF00|000000';
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -1.94995, lng: 30.05885},
+          zoom: 10
+        });
+        var geocoder = new google.maps.Geocoder;
+
+        var service = new google.maps.DistanceMatrixService;
+        service.getDistanceMatrix({
+          origins: [origin1, origin2],
+          destinations: [destinationA, destinationB],
+          travelMode: 'DRIVING',
+          unitSystem: google.maps.UnitSystem.METRIC,
+          avoidHighways: false,
+          avoidTolls: false
+        }, function(response, status) {
+          if (status !== 'OK') {
+            alert('Error was: ' + status);
+          } else {
+            var originList = response.originAddresses;
+            var destinationList = response.destinationAddresses;
+            var outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = '';
+            deleteMarkers(markersArray);
+
+            var showGeocodedAddressOnMap = function(asDestination) {
+              var icon = asDestination ? destinationIcon : originIcon;
+              return function(results, status) {
+                if (status === 'OK') {
+                  map.fitBounds(bounds.extend(results[0].geometry.location));
+                  markersArray.push(new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location,
+                    icon: icon
+                  }));
+                } else {
+                  alert('Geocode was not successful due to: ' + status);
+                }
+              };
+            };
+
+            for (var i = 0; i < originList.length; i++) {
+              var results = response.rows[i].elements;
+              geocoder.geocode({'address': originList[i]},
+                  showGeocodedAddressOnMap(false));
+              for (var j = 0; j < results.length; j++) {
+                geocoder.geocode({'address': destinationList[j]},
+                    showGeocodedAddressOnMap(true));
+                outputDiv.innerHTML += originList[i] + ' to ' + destinationList[j] +
+                    ': ' + results[j].distance.text + ' in ' +
+                    results[j].duration.text + '<br>';
+              }
+            }
+          }
+        });
+      }
+
+      function deleteMarkers(markersArray) {
+        for (var i = 0; i < markersArray.length; i++) {
+          markersArray[i].setMap(null);
+        }
+        markersArray = [];
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqAFwWSaZAlh8FiVkIhV8yx8aVXixJqhk&callback=initMap">
+    </script>
+
+
+
+
+
+<script src="scripts/orders.js"></script>
+</body>
+
+  </html>

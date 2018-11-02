@@ -1,0 +1,84 @@
+body {
+
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+	background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../image/ande_la.jpg);
+	color: #fff;
+	font-size: 16px;
+	font-family: courier;
+	text-align: justify;
+}
+
+.login-page {
+
+
+	width: 400px;
+	padding: 20px;
+	margin: 20px 20px;
+}
+
+.form{
+
+
+	position: relative;
+	padding: 0 auto 100px;
+	padding: 45px;
+	z-index: 1;
+	text-align: center;
+	background-color: #778899;
+	margin: 10px;
+}
+
+.form input {
+
+	font-family: courier;
+	font-size: 18px;
+	background-color: #f3f3f3;
+	margin: 0 0 16px;
+	box-sizing: border-box;
+	padding: 15px;
+	border: none;
+	width: 100%;
+	outline: 1;
+
+}
+
+.form button {
+
+	font-family: courier;
+	font-size: 18px;
+	width: 100%;
+	background-color: #008B8B;
+	text-transform: uppercase;
+	border: none;
+	padding: 15px;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+
+.form button:hover, .form button:active{
+
+	background-color:#2F4F4F;
+	transition: 0.5s;
+}
+
+.form .message {
+
+	color: #F0F8FF;
+	font-family: courier;
+	font-size: 16px;
+	margin: 15px 0 10px;
+}
+
+.form .message a {
+
+	color:#0000CD;
+	text-decoration: none;
+}
+
+ .hide {
+
+	display: none;
+}
