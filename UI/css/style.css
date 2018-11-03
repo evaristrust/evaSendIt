@@ -17,7 +17,6 @@ nav ul li {
 	font-family: courier;
 	font-size: 20px;
 	position: relative;
-	text-align: right;
 }
 nav ul li ul {
 
@@ -37,11 +36,17 @@ nav ul li:hover ul {
 nav ul li ul li a{
 
 	font-family: courier;
-	display: block;
 	font-size: 14px;
 	text-align: justify;
 	padding: 0px 10px;
 	
+}
+
+nav ul li ul li a:hover,
+nav ul li ul li a:active  {
+      
+      background-color: #2F4F4F;
+       
 }
 nav ul li a {
 
@@ -50,10 +55,9 @@ nav ul li a {
 	padding: 0 50px;
 	text-decoration: none;
 	margin: 10px 10px;
-	display: block;
 
 }
- ul li a:hover, ul li a:active {
+ nav ul li a:hover, nav ul li a:active {
 
 	background-color: #2F4F4F;
 }
@@ -77,30 +81,6 @@ body {
 .form-input{
 	width: 100%;
 }
-
-input, select {
-
-	width: 40%;
-	margin-bottom: 20px;
-	height: 25px;
-}
-
-legend {
-
-	font-size: 18px;
-	text-align: center;
-}
-
-.btn-primary {
-
-	background-color:#6A5ACD;
-	color: #fff;
-	font-family: courier;
-	font-size: 18px;
-	width: 30%;
-	padding: 20px;
-	cursor: pointer;
-} 
 
 .page_header {
 	margin: 1em 0 0.5em 0;
