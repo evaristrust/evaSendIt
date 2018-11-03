@@ -1,3 +1,10 @@
+
+body {
+
+	background-color:#DCDCDC;
+	font-family: courier;
+}
+
 nav {
 
 	background-color:#696969;
@@ -70,12 +77,6 @@ p#greeting {
 	color: #2F4F4F;
 	tex-align: justify;
 	width: 60%;
-}
-
-body {
-
-	background-color:#DCDCDC;
-	font-family: courier;
 }
 
 .form-input{
@@ -212,5 +213,16 @@ form.beautiful_form .submit_btn {
 }
 form.beautiful_form .submit_btn:hover {
     background: #CF7A7A
+}
+
+.btn-primary {
+
+    background-color:#6A5ACD;
+    color: #fff;
+    font-family: courier;
+    font-size: 18px;
+    width: 30%;
+    padding: 20px;
+    cursor: pointer;
 }
 
