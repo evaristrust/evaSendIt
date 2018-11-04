@@ -1,78 +1,66 @@
 <!Doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<script src="javascript/orders.js"></script>
-
-</head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="javascript/orders.js"></script>
+	</head>
 <body>
 	<nav>
-  <ul>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="#">Orders</a>
+				<ul>
+				  <li><a href="order.html"> Create Order</a></li>
+				  <li><a href="orders.html">Orders</a></li>
+				</ul>
+			</li>
+			<li><a href="admin/index.html">Admin</a></li>
+		</ul>
+	</nav>
 
-    <li><a href="index.html">Home</a></li>
-    <li><a href="#">Orders</a>
-        <ul>
-          <li><a href="order.html"> Create Order</a></li>
-           <li><a href="orders.html">Orders</a></li>
-           
-        </ul>
-    </li>
-    <li><a href="admin/index.html">Admin</a></li>
-  </ul>
-  </nav>
+	<h3 class="page_header">My Orders</h3>
 
-  <h3 class="page_header">My Orders</h3>
+	<table id="orders" class="beautiful_table">
+	 <thead>
+		<tr>
+		  <th>Item</th>
+		  <th>Quantity</th>
+		  <th>Weight</th>
+		  <th>Destination</th>
+		  <th>Status</th>
+		  <th>Details</th>
+		  <th>Action</th>
+		</tr>
+	 </thead>
 
-<table id="orders" class="beautiful_table">
-<thead>
-<tr>
-	
-	<th>Item</th>
-	<th>Quantity</th>
-	<th>Weight</th>
-	<th>Destination</th>
-	<th>Status</th>
-	<th>Details</th>
-	<th>Action</th>
-</tr>
-</thead>
-<tbody>
-
-<tr>
-	
-	<td>Iphone box</td>
-	<td>10</td>
-	<td>50</td>
-	<td>Rwanda</td>
-	<td>Complete</td>
-	<td><a href='order_details.html'>Details</a></td>
-	<td>
-		<a href="#" onclick="updateOrder(event,'complete','change',1 )">Change</a> 
-		<a href="#" onclick="updateOrder(event,'complete','cancel',1 )">Cancel</a>
-
-	</td>
-</tr>
-
-<tr>
-
-	<td>Laptops</td>
-	<td>4</td>
-	<td>50</td>
-	<td>Rwanda</td>
-	<td>InComplete</td>
-	<td><a href='order_details.html'>Details</a></td>
-	<td>
-		<a href="#" onclick="updateOrder(event,'incomplete','change',2 )">Change</a> 
-		<a href="#" onclick="updateOrder(event,'incomplete','cancel',2 )">Cancel</a>
-
-	</td>
-</tr>
-
-</tbody>
-</table>
-
+	 <tbody>
+		<tr>	
+		  <td>Iphone box</td>
+		  <td>10</td>
+		  <td>50</td>
+		  <td>Rwanda</td>
+		  <td>Complete</td>
+		  <td><a href='order_details.html'>Details</a></td>
+		  <td>
+		  <a href="#" onclick="updateOrder(event,'complete','change',1 )">Change</a> 
+		  <a href="#" onclick="updateOrder(event,'complete','cancel',1 )">Cancel</a>
+		  </td>
+		</tr>
+		<tr>
+		  <td>Laptops</td>
+		  <td>4</td>
+		  <td>50</td>
+		  <td>Rwanda</td>
+		  <td>InComplete</td>
+		  <td><a href='order_details.html'>Details</a></td>
+		  <td>
+		    <a href="#" onclick="updateOrder(event,'incomplete','change',2 )">Change</a> 
+		    <a href="#" onclick="updateOrder(event,'incomplete','cancel',2 )">Cancel</a>
+		  </td>
+		</tr>
+	 </tbody>
+	</table>
 </body>
-
 </html>

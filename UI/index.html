@@ -8,54 +8,54 @@
   <link rel="stylesheet" type="text/css" href="css/index.css">
   <script src="javascript/index.js" type="text/javascript"></script>
 </head>
+
 <body>
   <nav>
-  <ul>
-
-    <li><a href="index.html">Home</a></li>
-    <li><a href="#">Orders</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Orders</a>
         <ul>
           <li><a href="order.html"> Create Order</a></li>
-           <li><a href="orders.html">Orders</a></li>   
+          <li><a href="orders.html">Orders</a></li>   
         </ul>
-    </li>
-    <li><a href="admin/index.html">Admin</a></li>
-  </ul>
+      </li>
+      <li><a href="admin/index.html">Admin</a></li>
+    </ul>
   </nav>
-<div class="login-page">
-  <p>
+  
+  <div class="login-page">
+    <p>
     <span class="welcome"> Welcome to SendIt! Your quick courier service!</span><br>
-  If you are a member, login with a valid username and password. If you are a new user, click on register to sign up. 
-  </p>
-<div class="form">
-    <form class="hide" id="register-form"> 
+      If you are a member, login with a valid username and password. If you are a new user, click on register to sign up. 
+    </p>
 
-    	<input type="text" placeholder="First Name" required>
-    	<input type="text" placeholder="Last Name" required>
-    	<input type="text" placeholder="User Name" required>
-      <input type="email" placeholder="Email Id" autocomplete>
-    	<input type="text" placeholder="Country" required>
-      <input type="text" placeholder="City" required>
-      <input type="text" placeholder="Address">
-    	<button type="button" id="create">Create</button>
-    	<p class="message"> Already Registered? <a href ="#" id="btn_login">Login</a>
-    	</p>
-
-
+    <div class="form">
+      <form class="hide" id="register-form"> 
+        <input type="text" placeholder="First Name" required>
+        <input type="text" placeholder="Last Name" required>
+        <input type="text" placeholder="User Name" required>
+        <input type="email" placeholder="Email Id" required autocomplete>
+        <input type="text" placeholder="Country" required>
+        <input type="text" placeholder="City" required>
+        <input type="text" placeholder="Address">
+        <button type="button" id="create">Create</button>
+        <p class="message"> Already Registered? <a href ="#" id="btn_login">Login</a>
+        </p>
+    </form>
+    
+    <form class="show" id="login-form"> 
+      <input type="text" placeholder="User Name">
+      <input type="password" placeholder="Password">
+      <button type="button">Login</button>
+      <p class="message"> Not Registered? <a id="btn_register" href ="#">Register</a>
+      </p>
+      
     </form>
 
-   <form class="show" id="login-form"> 
+    </div>
+  
+  </div>
 
-    	<input type="text" placeholder="User Name">
-    	<input type="password" placeholder="Password">
-    	<button type="button">Login</button>
-    	<p class="message"> Not Registered? <a id="btn_register" href ="#">Register</a>
-    	</p>
-
-
-    </form>
-</div>
-</div>
 </body>
 
 </html>

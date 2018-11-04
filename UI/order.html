@@ -2,114 +2,90 @@
 <!Doctype html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-
-<title> create order</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title> create order</title>
 </head>
+
 <body>
-	<nav>
-  <ul>
-
-    <li><a href="index.html">Home</a></li>
-    <li><a href="#">Orders</a>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Orders</a>
         <ul>
-          <li><a href="order.html"> Create Order</a></li>
-           <li><a href="orders.html">Orders</a></li>
-           
+        <li><a href="order.html"> Create Order</a></li>
+        <li><a href="orders.html">Orders</a></li>
         </ul>
-    </li>
-    <li><a href="admin/index.html">Admin</a></li>
-  </ul>
+      </li>
+      <li><a href="admin/index.html">Admin</a></li>
+    </ul>
   </nav>
+
   <h3 class="page_header">Create New Order</h3>
+    <p id="greeting">
+      Dear valued customer, welcome to the order page of SendIt. We are here to serve you as quick as possible. 
+      This is the very great choice you made to buy products from us. Fill this form to order your products.
+    </p>
+  <form method = "post" class="beautiful_form">
+    <fieldset>
+      <legend> Receiver Details </legend>
+      <label for="first">First Name</label><br>
+      <input id = "frst" type="text" name="Fist Name" required><br>
+      <label for="middle">Middle Name</label><br>
+      <input type="text" name="Middle Name" required><br>
+      <label>Last Name</label><br>
+      <input type="text" name="Last Name" required><br>
+      <label>Your Email</label><br>
+      <input type = "email" name= "email" required autocomplete="on"><br>
+      <label for="country"> Country </label><br>
 
-  <p id="greeting">
-  Dear valued customer, welcome to the order page of SendIt. We are here to serve you as quick as possible. 
-  This is the very great choice you made to buy products from us. Fill this form to order your products.
-  </p>
-<form method = "post" class="beautiful_form">
-  <fieldset>
-    <legend> Receiver Details </legend>
-
-    <label for="first">First Name</label><br>
-    	<input id = "frst" type="text" name="Fist Name" required><br>
-    	
-    <label for="middle">Middle Name</label><br>
-    	<input type="text" name="Middle Name" required><br>
-    	
-    <label>Last Name</label><br>
-    	<input type="text" name="Last Name" required><br>
-    	
-    <label>Your Email</label><br>
-    	<input type = "email" name= "email" required autocomplete="on"><br>
-
-    <label for="country"> Country </label><br>
-    	 <select>
-      <option value="Afghanistan">Afghanistan</option>
-      
-      <option value="Bahamas">Bahamas</option>
-      
-      <option value="Cambodia">Cambodia</option>
-      
-      <option value="Denmark">Denmark</option>
-     
-      <option value="Ecuador">Ecuador</option>
-     
-      <option value="Falkland Islands">Falkland Islands (Malvinas)</option>
-     
-      <option value="Gabon">Gabon</option>
-      
-      <option value="Haiti">Haiti</option>
-     
-      <option value="Iceland">Iceland</option>
-      <option value="Japan">Japan</option>
-      <option value="Nigeria">Nigeria</option>
-
-      <option value="Rwanda">Rwanda</option>
-
-    </select>
-
-    <label for="tel"> Phone Number </label><br>
-    <input type="text" name="phone" required><br>
-</fieldset>
-
-  <fieldset>
-      <legend> Parcel details</legend>
-        	<label for="item"> Item to purchase <label><br>
-        		<input  type="text" name="parcel" required><br>
-        	<label for="qnty"> Quantity </label><br>
-        		<input type="number" name="quantity" required><br>
-        	<label for="weight"> Weight/Kg </label><br>
-        	<input type="number" name="weight" required><br>
-        	<label for="destiny"> Delivery Destination </label><br>
-        	<select>
-            	<option value="Afghanistan">Afghanistan</option>
-              
-              <option value="Bahamas">Bahamas</option>
-              
-              <option value="Cambodia">Cambodia</option>
-              
-              <option value="Denmark">Denmark</option>
-             
-              <option value="Ecuador">Ecuador</option>
-             
-              <option value="Falkland Islands">Falkland Islands (Malvinas)</option>
-             
-              <option value="Gabon">Gabon</option>
-              
-              <option value="Haiti">Haiti</option>
-             
-              <option value="Iceland">Iceland</option>
-              <option value="Japan">Japan</option>
-              <option value="Nigeria">Nigeria</option>
-
-              <option value="Rwanda">Rwanda</option>
-
-           </select><br>
-         <button type="button" class="submit_btn"> Submit </button
+      <select>
+        <option value="Afghanistan">Afghanistan</option>
+        <option value="Bahamas">Bahamas</option>
+        <option value="Cambodia">Cambodia</option>
+        <option value="Denmark">Denmark</option>
+        <option value="Ecuador">Ecuador</option>
+        <option value="Falkland Islands">Falkland Islands (Malvinas)</option>
+        <option value="Gabon">Gabon</option>
+        <option value="Haiti">Haiti</option>
+        <option value="Iceland">Iceland</option>
+        <option value="Japan">Japan</option>
+        <option value="Nigeria">Nigeria</option>
+        <option value="Rwanda">Rwanda</option>
+      </select>
+      <label for="tel"> Phone Number </label><br>
+      <input type="text" name="phone" required><br>
     </fieldset>
-</form>
+
+    <fieldset>
+      <legend> Parcel details</legend>
+      <label for="item"> Item to purchase <label><br>
+      <input  type="text" name="parcel" required><br>
+      <label for="qnty"> Quantity </label><br>
+      <input type="number" name="quantity" required><br>
+      <label for="weight"> Weight/Kg </label><br>
+      <input type="number" name="weight" required><br>
+      <label for="destiny"> Delivery Destination </label><br>
+      
+      <select>
+        <option value="Afghanistan">Afghanistan</option>
+        <option value="Bahamas">Bahamas</option>
+        <option value="Cambodia">Cambodia</option>
+        <option value="Denmark">Denmark</option>
+        <option value="Ecuador">Ecuador</option>
+        <option value="Falkland Islands">Falkland Islands (Malvinas)</option>
+        <option value="Gabon">Gabon</option>
+        <option value="Haiti">Haiti</option>
+        <option value="Iceland">Iceland</option>
+        <option value="Japan">Japan</option>
+        <option value="Nigeria">Nigeria</option>
+        <option value="Rwanda">Rwanda</option>
+      </select><br>
+    </fieldset>
+    
+    <button type="button" class="submit_btn"> Submit </button
+    
+  </form>
 </body>
 </html>
